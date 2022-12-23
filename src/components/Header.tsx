@@ -5,19 +5,23 @@ import Link from "next/link";
 // Icon
 import { HiSearch, HiBell } from "react-icons/hi";
 
+// hooks
+import useAuth from '@/hooks/useAuth';
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { logout } = useAuth()
 
   useEffect(() => {
     const handleScroll = () => {
-      if ( window.screenY > 0 ) {
+      if (window.scrollY > 0) {
         setIsScrolled(true)
       } else {
         setIsScrolled(false)
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -42,9 +46,9 @@ const Header = () => {
         <HiSearch className="hidden h-6 w-6 sm:inline" />
         <p className="hidden lg:inline">Kids</p>
         <HiBell className="h-6 w-6" />
-        <Link href="/account">
-          <img src="https://rb.gy/g1pwyx" alt="" className="cursor-pointer rounded" />
-        </Link>
+        {/* <Link href="/account"> */}
+          <img onClick={logout} src="https://rb.gy/g1pwyx" alt="" className="cursor-pointer rounded" />
+        {/* </Link> */}
       </div>
     </header>
   )
