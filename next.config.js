@@ -1,17 +1,12 @@
 /** @type {import('next').NextConfig} */
+
+// const withTM = require('next-transpile-modules')([
+//   '@stripe/firestore-stripe-payments',
+// ]);
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'rb.gy',
-    //   },
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'image.tmdb.org'
-    //   }
-    // ],
     domains: ['rb.gy', 'image.tmdb.org'],
   },
 }
