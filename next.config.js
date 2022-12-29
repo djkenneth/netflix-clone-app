@@ -1,13 +1,20 @@
 /** @type {import('next').NextConfig} */
 
-// const withTM = require('next-transpile-modules')([
-//   '@stripe/firestore-stripe-payments',
-// ]);
-
 const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['rb.gy', 'image.tmdb.org'],
+  },
+  transpilePackages: ['@stripe/firestore-stripe-payments'],
+  env: {
+    NEXT_PUBLIC_TMDB_API_KEY: process.env.NEXT_PUBLIC_TMDB_API_KEY,
+    NEXT_PUBLIC_API_KEY: process.env.NEXT_PUBLIC_API_KEY,
+    NEXT_PUBLIC_AUTH_DOMAIN: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+    NEXT_PUBLIC_PROJECT_ID: process.env.NEXT_PUBLIC_PROJECT_ID,
+    NEXT_PUBLIC_STORAGE_BUCKET: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+    NEXT_PUBLIC_MESSAGING_SENDER_ID: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+    NEXT_PUBLIC_APP_ID: process.env.NEXT_PUBLIC_APP_ID,
+    NEXT_PUBLIC_MEASUREMENT_ID: process.env.NEXT_PUBLIC_MEASUREMENT_ID
   },
 }
 

@@ -9,6 +9,7 @@ import { useRecoilValue } from 'recoil'
 import requests from '@/utils/request'
 // hooks
 import useAuth from '@/hooks/useAuth'
+import useSubscription from '@/hooks/useSubscription'
 // stripe
 import { getProducts, Product } from '@stripe/firestore-stripe-payments'
 // lib
@@ -49,13 +50,13 @@ const Home: NextPage = ({
   products
   }: Props) => {
 
-  const { loading } = useAuth()
+  const { loading, user } = useAuth()
   const showModal = useRecoilValue(modalState)
-  const subscription = false;
+  const subscription = useSubscription(user);
 
   if(loading || subscription === null) return null
 
-  // if(!subscription) return <Plans products={products} />
+  if(!subscription) return <Plans products={products} />
 
   return (
     <div className={`relative h-screen bg-gradient-to-b lg:h-[140vh] ${showModal && '!h-screen overflow-hidden'}`}>
