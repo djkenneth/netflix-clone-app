@@ -40,8 +40,8 @@ const Membership = () => {
             <p className="text-[gray]">Password: ********</p>
           </div>
           <div className="md:text-right">
-            <p className="membershipLink">Change email</p>
-            <p className="membershipLink">Change password</p>
+            <p className="member-ship-link">Change email</p>
+            <p className="member-ship-link">Change password</p>
           </div>
         </div>
 
@@ -55,10 +55,10 @@ const Membership = () => {
             </p>
           </div>
           <div className="md:text-right">
-            <p className="membershipLink">Manage payment info</p>
-            <p className="membershipLink">Add backup payment method</p>
-            <p className="membershipLink">Billing Details</p>
-            <p className="membershipLink">Change billing day</p>
+            <p className="member-ship-link">Manage payment info</p>
+            <p className="member-ship-link">Add backup payment method</p>
+            <p className="member-ship-link">Billing Details</p>
+            <p className="member-ship-link">Change billing day</p>
           </div>
         </div>
       </div>

@@ -7,9 +7,11 @@ import { Movie } from '@/types'
 import { useRecoilState } from 'recoil'
 // modal
 import { modalState, movieState } from '@/atoms/modalAtom'
+// firebase
+import { DocumentData } from '@firebase/firestore'
 
 interface Props {
-    movie: Movie
+    movie: Movie | DocumentData
 }
 
 const Thumbnail = ({ movie }: Props) => {

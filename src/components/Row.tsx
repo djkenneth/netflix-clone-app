@@ -1,17 +1,17 @@
 import React, { useRef, useState } from 'react'
-
+// firebase
+import { DocumentData } from '@firebase/firestore';
 // types
 import { Movie } from '@/types'
-
 // icons
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-
 // components
 import Thumbnail from './Thumbnail';
 
+
 interface Props {
   title: string;
-  movies: Movie[]
+  movies: Movie[] | DocumentData[]
 }
 
 const Row = ({ title, movies }: Props) => {
