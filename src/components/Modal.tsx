@@ -88,7 +88,7 @@ const Modal = () => {
   useEffect(
     () =>
       setAddedToList(
-        movies.findIndex((result) => result.data().id === movie?.id) !== -1
+        movies.findIndex((result) => result?.data()?.id === movie?.id) !== -1
       ),
     [movies]
   )
